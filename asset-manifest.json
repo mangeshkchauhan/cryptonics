@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/%7Bproject%20name%20in%20repo%7D/static/js/main.c6670f98.js",
+    "static/media/btc.png": "/%7Bproject%20name%20in%20repo%7D/static/media/btc.04101b0b163c035fa57e.png",
+    "index.html": "/%7Bproject%20name%20in%20repo%7D/index.html",
+    "main.c6670f98.js.map": "/%7Bproject%20name%20in%20repo%7D/static/js/main.c6670f98.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c6670f98.js"
+  ]
+}
