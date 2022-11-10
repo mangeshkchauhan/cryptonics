@@ -1,6 +1,6 @@
 {
 	"homepage": "http://mangeshkchauhan.github.io/cryptonics",
-	"name": "crypto-watcher",
+	"name": "cryptonics",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
