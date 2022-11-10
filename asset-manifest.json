@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/cryptonics/static/js/main.10d26cfb.js",
+    "main.js": "/cryptonics/static/js/main.dfe27ebf.js",
     "static/media/btc.png": "/cryptonics/static/media/btc.04101b0b163c035fa57e.png",
     "index.html": "/cryptonics/index.html",
-    "main.10d26cfb.js.map": "/cryptonics/static/js/main.10d26cfb.js.map"
+    "main.dfe27ebf.js.map": "/cryptonics/static/js/main.dfe27ebf.js.map"
   },
   "entrypoints": [
-    "static/js/main.10d26cfb.js"
+    "static/js/main.dfe27ebf.js"
   ]
 }
