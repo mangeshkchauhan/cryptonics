@@ -1,5 +1,5 @@
 import { api } from "@/lib/api";
-import type { Coin, CoinDetails, Exchange, ChartData, Currency, TimeRange } from "@/types/crypto";
+import type { Coin, CoinDetails, Exchange, ChartData, Currency, TimeRange, TrendingCoin, GlobalMarketData } from "@/types/crypto";
 
 export const cryptoService = {
   // Fetch paginated list of coins
@@ -69,13 +69,13 @@ export const cryptoService = {
   },
 
   // Fetch trending coins
-  async getTrendingCoins(): Promise<{ coins: any[] }> {
+  async getTrendingCoins(): Promise<{ coins: TrendingCoin[] }> {
     const response = await api.get("/search/trending");
     return response.data;
   },
 
   // Fetch global market data
-  async getGlobalData(): Promise<any> {
+  async getGlobalData(): Promise<GlobalMarketData> {
     const response = await api.get("/global");
     return response.data;
   },

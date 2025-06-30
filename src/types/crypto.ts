@@ -67,10 +67,14 @@ export interface CoinDetails {
   public_interest_score: number;
   market_data: {
     current_price: Record<string, number>;
-    total_value_locked?: any;
-    mcap_to_tvl_ratio?: any;
-    fdv_to_tvl_ratio?: any;
-    roi?: any;
+    total_value_locked?: number | null;
+    mcap_to_tvl_ratio?: number | null;
+    fdv_to_tvl_ratio?: number | null;
+    roi?: {
+      times: number;
+      currency: string;
+      percentage: number;
+    } | null;
     ath: Record<string, number>;
     ath_change_percentage: Record<string, number>;
     ath_date: Record<string, string>;
@@ -110,13 +114,13 @@ export interface CoinDetails {
     last_updated: string;
   };
   community_data: {
-    facebook_likes?: any;
-    twitter_followers?: any;
+    facebook_likes?: number | null;
+    twitter_followers?: number | null;
     reddit_average_posts_48h: number;
     reddit_average_comments_48h: number;
     reddit_subscribers: number;
     reddit_accounts_active_48h: string;
-    telegram_channel_user_count?: any;
+    telegram_channel_user_count?: number | null;
   };
   developer_data: {
     forks: number;
@@ -135,9 +139,9 @@ export interface CoinDetails {
   };
   public_interest_stats: {
     alexa_rank: number;
-    bing_matches?: any;
+    bing_matches?: number | null;
   };
-  status_updates: any[];
+  status_updates: unknown[];
   last_updated: string;
 }
 
@@ -170,4 +174,37 @@ export interface PaginationInfo {
   page: number;
   totalPages: number;
   perPage: number;
+}
+
+export interface TrendingCoin {
+  id: string;
+  coin_id: number;
+  name: string;
+  symbol: string;
+  market_cap_rank: number;
+  thumb: string;
+  small: string;
+  large: string;
+  slug: string;
+  price_btc: number;
+  score: number;
+}
+
+export interface TrendingCoinsResponse {
+  coins: TrendingCoin[];
+}
+
+export interface GlobalMarketData {
+  data: {
+    active_cryptocurrencies: number;
+    upcoming_icos: number;
+    ongoing_icos: number;
+    ended_icos: number;
+    markets: number;
+    total_market_cap: Record<string, number>;
+    total_volume: Record<string, number>;
+    market_cap_percentage: Record<string, number>;
+    market_cap_change_percentage_24h_usd: number;
+    updated_at: number;
+  };
 } 

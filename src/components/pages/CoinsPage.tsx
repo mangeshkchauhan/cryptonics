@@ -93,7 +93,7 @@ export function CoinsPage() {
             {filteredCoins.length === 0 && searchTerm && (
               <div className="text-center py-12">
                 <p className="text-gray-400 text-lg">
-                  No cryptocurrencies found matching "{searchTerm}"
+                  No cryptocurrencies found matching &quot;{searchTerm}&quot;
                 </p>
               </div>
             )}

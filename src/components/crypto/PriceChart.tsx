@@ -106,7 +106,7 @@ export function PriceChart({ data, currency, timeRange }: PriceChartProps) {
         borderWidth: 1,
         cornerRadius: 8,
         callbacks: {
-          label: function(context: any) {
+          label: function(context: { parsed: { y: number } }) {
             return `${currency}${context.parsed.y.toLocaleString()}`;
           },
         },
@@ -131,8 +131,8 @@ export function PriceChart({ data, currency, timeRange }: PriceChartProps) {
         },
         ticks: {
           color: '#9CA3AF',
-          callback: function(value: any) {
-            return `${currency}${value.toLocaleString()}`;
+          callback: function(value: string | number) {
+            return `${currency}${Number(value).toLocaleString()}`;
           },
         },
       },

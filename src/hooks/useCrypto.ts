@@ -1,6 +1,6 @@
 import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 import { cryptoService } from "@/services/cryptoService";
-import type { Coin, CoinDetails, Exchange, ChartData, Currency, TimeRange } from "@/types/crypto";
+import type { Coin, CoinDetails, Exchange, ChartData, Currency, TimeRange, TrendingCoin, GlobalMarketData } from "@/types/crypto";
 
 // Query keys for consistent cache management
 export const QUERY_KEYS = {
@@ -75,7 +75,7 @@ export function useExchanges(
 
 // Hook for fetching trending coins
 export function useTrendingCoins(
-  options?: Omit<UseQueryOptions<{ coins: any[] }>, "queryKey" | "queryFn">
+  options?: Omit<UseQueryOptions<{ coins: TrendingCoin[] }>, "queryKey" | "queryFn">
 ) {
   return useQuery({
     queryKey: QUERY_KEYS.trending(),
@@ -88,7 +88,7 @@ export function useTrendingCoins(
 
 // Hook for fetching global market data
 export function useGlobalData(
-  options?: Omit<UseQueryOptions<any>, "queryKey" | "queryFn">
+  options?: Omit<UseQueryOptions<GlobalMarketData>, "queryKey" | "queryFn">
 ) {
   return useQuery({
     queryKey: QUERY_KEYS.global(),
