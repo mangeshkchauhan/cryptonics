@@ -1,11 +1,12 @@
 import { CoinDetailsPage } from "@/components/pages/CoinDetailsPage";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function CoinDetails({ params }: PageProps) {
-  return <CoinDetailsPage coinId={params.id} />;
+export default async function CoinDetails({ params }: PageProps) {
+  const { id } = await params;
+  return <CoinDetailsPage coinId={id} />;
 } 
